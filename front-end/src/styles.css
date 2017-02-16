@@ -1,0 +1,30 @@
+/* line 1, ../compass/sass/styles.scss */
+body {
+  background-color: red;
+}
+
+/* line 5, ../compass/sass/styles.scss */
+.navbar {
+  height: 80px;
+}
+
+/* line 9, ../compass/sass/styles.scss */
+.sign-in {
+  text-align: center;
+}
+
+/* line 13, ../compass/sass/styles.scss */
+.jumbotron, .current-items {
+  text-align: center;
+}
+
+/* line 17, ../compass/sass/styles.scss */
+.trending {
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+/* line 22, ../compass/sass/styles.scss */
+.nav-pills {
+  display: inline-block;
+}

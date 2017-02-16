@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import './styles.css';
+import SignInBar from './containers/SignInBar.js';
+import Jumbotron from './containers/Jumbotron.js';
+import CurrentItems from './containers/CurrentItems.js';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      {this.props.children}
+      
+        // <SignInBar />
+        // <Jumbotron />
+        // <CurrentItems />
       </div>
     );
   }
