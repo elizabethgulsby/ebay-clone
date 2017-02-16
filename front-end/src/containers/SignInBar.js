@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
+import { Form, FormGroup, FormControl, Button } from 'react-bootstrap';
+import { Link } from 'react-router';
 
 class SignInBar extends Component {
 	constructor(props) {
@@ -10,45 +12,30 @@ class SignInBar extends Component {
 	}
 	render() {
 		return (
-			<div className="container">
-			<div className="row">
-				<div className="col-sm-12 sign-in">
-					<nav className="navbar navbar-default">
-  						<div className="col-sm-3">
-  							<img src="http://placehold.it/200x65" />
-  						</div>
-  						<div className="col-sm-4">
-  							<input placeholder="Search..."/>
-  							<button type="submit" className="btn btn-primary btn-sm">Search</button>
-  						</div>
-  						<div className="col-sm-2">
-  							<a href="#">Create Listing</a>
-  						</div>
-  						<div className="col-sm-1">
-  							<a href="#">Sign In</a>
-  							
-  						</div>
-  						<div className="col-sm-1">
-  							<a href="#">Register</a>
-  						</div>
-					</nav>
+			<div className="navbar">
+				<div className="nav-container">
+					<div className="brand">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/4/48/EBay_logo.png" />
+					</div>
+
+					<div className="search">
+						<Form inline>
+							<FormGroup>
+								<FormControl className="input" placeholder="Search" />
+							</FormGroup>
+							<Button className="search-button" bsStyle="primary" bsSize="small" type="submit">Search</Button>
+						</Form>
+					</div>
+
+					<div className="actions">
+						<Link to='/create listing' className="create-listings">Create Listing</Link>
+						<Link to='/signin' className="sign-in"> Sign In</Link> | <Link to='/register' className="register-link">Register</Link>
+					</div>
+
 				</div>
 			</div>
-		</div>
 		);
 	}
-}
-
-function mapStateToProps(state) {
-	return {
-		search: state.search
-	}
-}
-
-function mapDispatchToProps(dispatch) {
-	return bindActionCreators({
-
-	})
 }
 
 export default SignInBar;

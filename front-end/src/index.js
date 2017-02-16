@@ -5,8 +5,8 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import reduxPromise from 'redux-promise';
 
 
-import SignInBar from './containers/SignInBar.js';
-import Jumbotron from './containers/Jumbotron.js';
+// import SignInBar from './containers/SignInBar.js';
+// import Jumbotron from './containers/Jumbotron.js';
 import Home from './containers/Home.js'
 import Login from './containers/Login.js'
 import Register from './containers/Register.js'

@@ -50,12 +50,12 @@ class Register extends Component {
 			Message = "User was inserted!";
 		}
 		else {
-			Message = '';
+			Message = 'Register Here!';
 		}
 		return(
 			<div>
 				<h1>{Message}</h1>
-				<form onSubmit={this.handleRegister}>
+				<form className="register" onSubmit={this.handleRegister}>
 					<input type="text" name="username" value={this.state.getUserName} placeholder="Username" />
 					<input type="password" name="password" value={this.state.getPassword} placeholder="Password" />
 					<input type="submit" value="Register!" />

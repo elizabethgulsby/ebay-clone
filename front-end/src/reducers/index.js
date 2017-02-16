@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import SearchReducer from './SearchReducer.js';
-import GetHomeReducer from './GetHomeReducer.js';
+import GetHomeListingsReducer from './GetHomeListingsReducer.js';
 import RegisterReducer from './RegisterReducer.js'
+import LoginReducer from './LoginReducer.js'
 
 const rootReducer = combineReducers({
-	search: SearchReducer,
-	home: GetHomeReducer,
-	register: RegisterReducer
+	currentItems: GetHomeListingsReducer,
+	register: RegisterReducer,
+	login: LoginReducer
 })
 
 export default rootReducer;

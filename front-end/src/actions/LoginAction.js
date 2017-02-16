@@ -1,13 +1,13 @@
 import $ from 'jquery';
 
-export default function(registerData) {
+export default function(loginData) {
 	var thePromise = $.ajax({ //ajax request = stateless
 		method: "POST",
-		url: "http://localhost:3000/register",
-		data: registerData
+		url: "http://localhost:3000/login",
+		data: loginData
 	});
 	return {
-		type: "register",
+		type: "login",
 		payload: thePromise
 	}
 }

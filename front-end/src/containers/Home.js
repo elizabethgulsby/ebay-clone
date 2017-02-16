@@ -1,40 +1,23 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import getHomeAction from '../actions/getHomeAction';
-import Auction from '../components/Auction.js';
+import SignInBar from '../containers/SignInBar.js';
+import Jumbotron from '../containers/Jumbotron.js';
+import CurrentItems from '../containers/CurrentItems.js';
 
 class Home extends Component {
 
-	componentDidMount() {
-		this.props.getHomeData()
-	}
+	// componentDidMount() {
+	// 	this.props.getHomeData()
+	// }
 
 	render() {
-		console.log(this.props.homeData);
-		var homeAuctions = [];
-		this.props.homeData.map((auction, index) => {
-			homeAuctions.push(<Auction key={index} item={auction} />);
-		});
 		return(
 			<div>
-				<h1>Home</h1>
-				{homeAuctions}
+				<SignInBar />
+				<Jumbotron />
+				<CurrentItems />
 			</div>
 		);
 	}
 }
 
-function mapStateToProps(state) {
-	return {
-		homeData: state.home
-	}
-}
-
-function mapDispatchToProps(dispatch) {
-	return bindActionCreators({
-		getHomeData: getHomeAction
-	}, dispatch)
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default Home;

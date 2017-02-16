@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 
 class Auction extends Component {
+	constructor(props) {
+		super(props);
+		
+	}
 	// console.log(this.props.item);
 	render() {
 		var auctionItem = this.props.item;

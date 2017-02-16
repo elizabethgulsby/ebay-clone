@@ -10,10 +10,6 @@ class App extends Component {
     return (
       <div className="App">
       {this.props.children}
-      
-        // <SignInBar />
-        // <Jumbotron />
-        // <CurrentItems />
       </div>
     );
   }

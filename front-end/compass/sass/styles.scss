@@ -1,17 +1,69 @@
 body {
-	background-color: red;
+	background-color: white;
 }
 
-.navbar {
-	height: 80px;
+.App {
+	max-width: 1200px;
+	margin: auto;
 }
 
-.sign-in {
+.search {
+    text-align: center;
+    display: inline-block;
+    width: 50%;
+
+}
+
+.nav-pills {
+	display: inline-block;
+}
+
+.nav-container {
+	height: 70px;
+}
+
+.brand {
+	display: inline-block;
+    width: 20%;
+    height: 70px;
+    margin: 0;
+    img {
+        width: 180px;
+        height: 70px;
+    }
+}
+
+.actions {
+	display: inline-block;
+	width: 30%;
+	// height: 70px;
 	text-align: center;
 }
 
-.jumbotron, .current-items {
+.register {
 	text-align: center;
+}
+
+h1 {
+	text-align: center;
+}
+
+.create-listings, .sign-in {
+	padding-right: 10px;
+}
+
+.register-link {
+	padding-left: 10px;
+}
+
+
+.input {
+	width: 500px !important;
+}
+
+.jumbotron, .current-items, .sign-in {
+	text-align: center;
+	position: relative;
 }
 
 .trending {
@@ -19,6 +71,20 @@ body {
 	padding-bottom: 25px;
 }
 
-.nav-pills {
-	display: inline-block;
+.auction-item {
+	width: 200px;
+	height: 200px;
 }
+
+
+
+
+// .search {
+// 	display: inline-block;
+// 	width: 378px;
+// 	input {
+// 		width: 250px;
+// 	}
+// }
+
+
