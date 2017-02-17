@@ -100,11 +100,26 @@ router.post('/login', (req, res, next) => {
 	});
 	// res.json(req.body);
 
-})
+});
 
 //make a route for create listing
-router.get('/createlisting', function (req, res, next) => {
-	
+router.get('/createlisting', function (req, res, next) {
+
+});
+
+//make a get route for a single auction's detail page based on id in the url
+router.get('/getAuctionItem/:auctionId', function(req, res, next) {
+	var theAuctionId = req.params.auctionId;
+	var getAuctionQuery = "SELECT * FROM auctions WHERE id = ?";
+	connection.query(getAuctionQuery, [theAuctionId], (error, results, fields) => {
+		if (error) throw error;
+		res.json(results);
+	})
+});
+
+//create submit_bid path 
+router.post('/submitBid', function(req, res, next) {
+	res.json(req.body);
 })
 
 module.exports = router;

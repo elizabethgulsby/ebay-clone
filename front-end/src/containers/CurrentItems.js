@@ -5,52 +5,24 @@ import {bindActionCreators} from 'redux';
 import getHomeListingsAction from '../actions/getHomeListingsAction';
 
 class CurrentItems extends Component {
+
+	componentDidMount() {
+		this.props.getHomeData();
+		console.log("test");
+	}
+
 	render() {
 		console.log(this.props.homeData);
 		var homeAuctions = [];
 		this.props.homeListingsData.map((auction, index) => {
 			homeAuctions.push(<Auction key={index} item={auction} />);
 		});
+		console.log(this.props.homeListingsData);
 		return (
 			<div className="container">
-			{homeAuctions}
 				<div className="row current-items">
-					Trending items go here
+						{homeAuctions}
 				</div>
-					<div className="row">
-						<div className="col-sm-12">
-							<div className="col-sm-4 trending">
-								<img className="auction-item" src="http://placehold.it/200x200" role="presentation" />
-								<h4>Title Goes Here</h4>
-								<button>More Info</button>
-							</div>
-							<div className="col-sm-4 trending">
-								<img src="http://placehold.it/200x200" role="presentation"/>
-								<h4>Title Goes Here</h4>
-								<button>More Info</button>
-							</div>
-							<div className="col-sm-4 trending">
-								<img src="http://placehold.it/200x200" role="presentation"/>
-								<h4>Title Goes Here</h4>
-								<button>More Info</button>
-							</div>
-							<div className="col-sm-4 trending">
-								<img src="http://placehold.it/200x200" role="presentation"/>
-								<h4>Title Goes Here</h4>
-								<button>More Info</button>
-							</div>
-							<div className="col-sm-4 trending">
-								<img src="http://placehold.it/200x200" role="presentation"/>
-								<h4>Title Goes Here</h4>
-								<button>More Info</button>
-							</div>
-							<div className="col-sm-4 trending">
-								<img src="http://placehold.it/200x200" role="presentation"/>
-								<h4>Title Goes Here</h4>
-								<button>More Info</button>
-							</div>
-						</div>
-					</div>
 			</div>
 		)
 	}

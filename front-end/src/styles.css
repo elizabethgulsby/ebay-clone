@@ -79,12 +79,24 @@ h1 {
 
 /* line 69, ../compass/sass/styles.scss */
 .trending {
+  display: inline-block;
   text-align: center;
   padding-bottom: 25px;
+  margin: auto;
 }
 
-/* line 74, ../compass/sass/styles.scss */
+/* line 76, ../compass/sass/styles.scss */
 .auction-item {
   width: 200px;
   height: 200px;
+}
+
+/* line 81, ../compass/sass/styles.scss */
+.home-auction {
+  border: 1px solid black;
+}
+
+/* line 85, ../compass/sass/styles.scss */
+.auction-detail-page {
+  text-align: center;
 }

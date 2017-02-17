@@ -11,7 +11,8 @@ import Home from './containers/Home.js'
 import Login from './containers/Login.js'
 import Register from './containers/Register.js'
 import Search from './containers/Search.js'
-
+import CreateListing from './containers/CreateListing.js'
+import AuctionItem from './containers/AuctionItem.js'
 
 import {Provider} from 'react-redux';
 
@@ -32,6 +33,8 @@ ReactDOM.render (
   				<Route path="login" component={Login} />
   				<Route path="register" component={Register} />
   				<Route path="search/:term" component={Search} />
+          <Route path="/createlisting" component={CreateListing} />
+          <Route path="auction/:auctionId" component={AuctionItem} />
   			</Route>
   		</Router>
 	</Provider>,

@@ -6,7 +6,7 @@ import CurrentItems from '../containers/CurrentItems.js';
 class Home extends Component {
 
 	// componentDidMount() {
-	// 	this.props.getHomeData()
+	// 	this.props.getHomeData();
 	// }
 
 	render() {

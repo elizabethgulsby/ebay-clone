@@ -67,13 +67,23 @@ h1 {
 }
 
 .trending {
+	display: inline-block;
 	text-align: center;
 	padding-bottom: 25px;
+	margin: auto;
 }
 
 .auction-item {
 	width: 200px;
 	height: 200px;
+}
+
+.home-auction {
+	border: 1px solid black;
+}
+
+.auction-detail-page {
+	text-align: center;
 }
 
 
