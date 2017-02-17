@@ -102,4 +102,9 @@ router.post('/login', (req, res, next) => {
 
 })
 
+//make a route for create listing
+router.get('/createlisting', function (req, res, next) => {
+	
+})
+
 module.exports = router;

@@ -15,7 +15,7 @@ class SignInBar extends Component {
 			<div className="navbar">
 				<div className="nav-container">
 					<div className="brand">
-						<img src="https://upload.wikimedia.org/wikipedia/commons/4/48/EBay_logo.png" />
+						<Link to='/'><img src="https://upload.wikimedia.org/wikipedia/commons/4/48/EBay_logo.png" /></Link>
 					</div>
 
 					<div className="search">
@@ -28,8 +28,8 @@ class SignInBar extends Component {
 					</div>
 
 					<div className="actions">
-						<Link to='/create listing' className="create-listings">Create Listing</Link>
-						<Link to='/signin' className="sign-in"> Sign In</Link> | <Link to='/register' className="register-link">Register</Link>
+						<Link to='/createlisting' className="create-listings">Create Listing</Link>
+						<Link to='/login' className="sign-in"> Sign In</Link> | <Link to='/register' className="register-link">Register</Link>
 					</div>
 
 				</div>
