@@ -119,7 +119,55 @@ router.get('/getAuctionItem/:auctionId', function(req, res, next) {
 
 //create submit_bid path 
 router.post('/submitBid', function(req, res, next) {
-	res.json(req.body);
-})
+	var selectQuery = "SELECT current_bid, starting_bid FROM auctions where id = ?";
+	connection.query(selectQuery, [req.body.auctionItemId], (error, results, fields) => {
+		// res.json(results[0]);
+		if ((req.body.bidAmount < results[0].currentBid) || (req.body.bidAmount < results[0].starting_bid)) {
+			res.json({
+				msg: "Bid Too Low!"
+			})
+		}
+		else {
+			//bid has passed server validation....it's high enough!  Update mySQL.
+			//Update the bid_history table and auctions table
+			// auctions table
+			// 	-high_bidder_id
+			// 	-current_bid
+			// bid_history
+			// 	-auction_id
+			// 	-bidder_id
+			// 	-amount
+
+			// update auctions high_bidder_id and bid where auction id = whatever was passed
+			var getUserId = "SELECT id FROM users where token = ?";
+			connection.query(getUserId, [req.body.userToken], (error2, results2, fields2) => {
+				if (results2.length > 0) { //token in the DB, valid token.  Move forward
+
+					var updateAuctionsQuery = "UPDATE auctions SET high_bidder_id=?, current_bid=?" + 
+						"WHERE id = ?";
+					connection.query(updateAuctionsQuery, [results2[0].id, req.body.bidAmount, req.body.auctionItemId], (error3, results3, fields3) => {
+						if (error) throw error;
+						res.json({
+							msg: "Bid accepted!",
+							newBid: req.body.bidAmount
+						});
+					})
+				}
+				else {
+					res.json({
+						msg: "Bad token"
+					});
+				}
+			})
+
+		}
+	});
+	// res.json(req.body);
+});
+
+//make a get route for the user page
+router.get('/account', function(req, res, next) {
+	
+});
 
 module.exports = router;

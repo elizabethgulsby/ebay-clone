@@ -2,6 +2,7 @@ import $ from 'jquery';
 
 export default function(bidAmount, auctionItemId, userToken) {
 	// make sure Express knows who we are...from our token
+	//need a query in Express that makes use of the items in the object
 	var bidInfo = {
 		bidAmount: bidAmount,
 		auctionItemId: auctionItemId,
