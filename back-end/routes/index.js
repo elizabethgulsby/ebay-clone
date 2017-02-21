@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var config = require('../config/config');
 var randtoken = require('rand-token');
+var stripe = require('stripe')("sk_test_aqPmqONGQHB62ls1KJKf1VZt"); //our stripe secret key goes here
 var mysql = require('mysql');
 var connection = mysql.createConnection({
 	host: config.host,
@@ -165,7 +166,33 @@ router.post('/submitBid', function(req, res, next) {
 	// res.json(req.body);
 });
 
-//make a get route for the user page
+// get a route for stripe payment processing
+router.post('/stripe', function(req, res, next) {
+	// run a query against req.body.token to make sure this person is logged in (make a function to check user token?)
+
+
+	// res.json(req.body);
+	stripe.charges.create({
+	  amount: req.body.amount,
+	  currency: "usd",
+	  source: req.body.stripeToken, // obtained with Stripe.js
+	  description: "Charge for input email"
+	}, function(err, charge) {
+	  // asynchronously called
+	  if (err) {
+	  	res.json({
+	  		msg: 'errorProcessing'
+	  	})
+	  }
+	  else {
+	  	res.json({
+	  		msg: 'paymentSuccess'
+	  	})
+	  }
+	});
+});
+
+//make a get route for the user account page
 router.get('/account', function(req, res, next) {
 	
 });

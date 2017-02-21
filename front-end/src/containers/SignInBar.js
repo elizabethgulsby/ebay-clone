@@ -29,6 +29,7 @@ class SignInBar extends Component {
 
 					<div className="actions">
 						<Link to='/createlisting' className="create-listings">Create Listing</Link>
+						<Link to='/account' className="account">Account</Link>
 						<Link to='/login' className="sign-in"> Sign In</Link> | <Link to='/register' className="register-link">Register</Link>
 					</div>
 

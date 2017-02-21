@@ -1,83 +1,84 @@
-/* line 1, ../compass/sass/styles.scss */
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
+/* line 3, ../compass/sass/styles.scss */
 body {
   background-color: white;
 }
 
-/* line 5, ../compass/sass/styles.scss */
+/* line 7, ../compass/sass/styles.scss */
 .App {
   max-width: 1200px;
   margin: auto;
 }
 
-/* line 10, ../compass/sass/styles.scss */
+/* line 12, ../compass/sass/styles.scss */
 .search {
   text-align: center;
   display: inline-block;
   width: 50%;
 }
 
-/* line 17, ../compass/sass/styles.scss */
+/* line 19, ../compass/sass/styles.scss */
 .nav-pills {
   display: inline-block;
 }
 
-/* line 21, ../compass/sass/styles.scss */
+/* line 23, ../compass/sass/styles.scss */
 .nav-container {
   height: 70px;
 }
 
-/* line 25, ../compass/sass/styles.scss */
+/* line 27, ../compass/sass/styles.scss */
 .brand {
   display: inline-block;
   width: 20%;
   height: 70px;
   margin: 0;
 }
-/* line 30, ../compass/sass/styles.scss */
+/* line 32, ../compass/sass/styles.scss */
 .brand img {
   width: 180px;
   height: 70px;
 }
 
-/* line 36, ../compass/sass/styles.scss */
+/* line 38, ../compass/sass/styles.scss */
 .actions {
   display: inline-block;
   width: 30%;
   text-align: center;
 }
 
-/* line 43, ../compass/sass/styles.scss */
+/* line 45, ../compass/sass/styles.scss */
 .register {
   text-align: center;
 }
 
-/* line 47, ../compass/sass/styles.scss */
+/* line 49, ../compass/sass/styles.scss */
 h1 {
   text-align: center;
 }
 
-/* line 51, ../compass/sass/styles.scss */
-.create-listings, .sign-in {
+/* line 53, ../compass/sass/styles.scss */
+.create-listings, .sign-in, .account {
   padding-right: 10px;
 }
 
-/* line 55, ../compass/sass/styles.scss */
+/* line 57, ../compass/sass/styles.scss */
 .register-link {
   padding-left: 10px;
 }
 
-/* line 60, ../compass/sass/styles.scss */
+/* line 62, ../compass/sass/styles.scss */
 .input {
   width: 500px !important;
 }
 
-/* line 64, ../compass/sass/styles.scss */
+/* line 66, ../compass/sass/styles.scss */
 .jumbotron, .current-items, .sign-in {
   text-align: center;
   position: relative;
 }
 
-/* line 69, ../compass/sass/styles.scss */
+/* line 71, ../compass/sass/styles.scss */
 .trending {
   display: inline-block;
   text-align: center;
@@ -85,18 +86,35 @@ h1 {
   margin: auto;
 }
 
-/* line 76, ../compass/sass/styles.scss */
+/* line 78, ../compass/sass/styles.scss */
 .auction-item {
   width: 200px;
   height: 200px;
 }
 
-/* line 81, ../compass/sass/styles.scss */
+/* line 83, ../compass/sass/styles.scss */
 .home-auction {
   border: 1px solid black;
 }
 
-/* line 85, ../compass/sass/styles.scss */
+/* line 87, ../compass/sass/styles.scss */
 .auction-detail-page {
   text-align: center;
+}
+
+/* line 91, ../compass/sass/styles.scss */
+.well {
+  width: 100%;
+  padding: 8px 0;
+  height: 80vh;
+}
+
+/* line 99, ../compass/sass/styles.scss */
+p {
+  text-align: center;
+}
+
+/* line 104, ../compass/sass/styles.scss */
+.fa-fw {
+  width: 2em;
 }

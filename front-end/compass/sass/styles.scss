@@ -1,3 +1,5 @@
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
+
 body {
 	background-color: white;
 }
@@ -48,7 +50,7 @@ h1 {
 	text-align: center;
 }
 
-.create-listings, .sign-in {
+.create-listings, .sign-in, .account {
 	padding-right: 10px;
 }
 
@@ -86,8 +88,22 @@ h1 {
 	text-align: center;
 }
 
+ .well {
+ 	// min-width: 250px;
+ 	// max-width: 500px; 
+ 	width: 100%;
+ 	padding: 8px 0;
+ 	height: 80vh;
+ }
 
+p {
+	text-align: center;
+}
 
+ // Account page - side nav styling
+.fa-fw {
+	width: 2em;
+}
 
 // .search {
 // 	display: inline-block;

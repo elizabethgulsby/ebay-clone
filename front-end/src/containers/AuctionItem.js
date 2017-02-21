@@ -3,12 +3,14 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import GetAuctionDetail from '../actions/GetAuctionDetail';
 import SubmitBidAction from '../actions/SubmitBidAction';
+import $ from 'jquery';
 
 
 class AuctionItem extends Component {
 	constructor(props) {
 		super(props);
 		this.submitBid = this.submitBid.bind(this);
+		this.makePayment = this.makePayment.bind(this);
 	}
 
 	componentDidMount() {
@@ -39,6 +41,39 @@ class AuctionItem extends Component {
 		}
 	}
 
+	makePayment() {
+		console.log("test");
+		var handler = window.StripeCheckout.configure({
+			key: 'pk_test_Rd8rrPFKgjdA6K3443hin6Ct',
+			locale: 'auto',
+			token: function(stripeToken) {
+				console.log(stripeToken)
+				var theData = {
+					amount: 10 * 100,
+					stripeToken: stripeToken.id,
+					token: localStorage.getItem('token')
+				}
+				$.ajax({
+					method: "POST",
+					url: 'http://localhost:3000/stripe',
+					data: theData
+				}).done((data) => {
+					console.log("Express, response, and the response is....")
+					console.log(data); //data here is the res.json that will be returned from ajax call
+					if (data.msg == 'paymentSuccess') {
+						// hide/replace button - changes what user sees based on what Express tells it to do
+					}
+				});
+			}
+		});
+		console.log(handler);
+		handler.open({
+			name: "Buy stuff from my auction site",
+			description: "Pay for your auction",
+			amount: 10 * 100
+		})
+	}
+
 	render() {
             if(this.props.auctionItemDetail.length === 0){
                 return(<h1>Loading auction...</h1>)
@@ -59,6 +94,7 @@ class AuctionItem extends Component {
 					<input type="number" placeholder="Enter Your Bid" />
 					<button type="submit">Bid</button>
 				</form>
+				<button className="btn btn-primary btn-sm" onClick={this.makePayment}>Pay My Auction!</button>
 			</div>
 		);
 	}

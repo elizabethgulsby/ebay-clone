@@ -14,6 +14,7 @@ import Search from './containers/Search.js'
 import CreateListing from './containers/CreateListing.js'
 import AuctionItem from './containers/AuctionItem.js'
 import userPage from './containers/userPage.js'
+import Bids from './containers/Bids.js'
 
 import {Provider} from 'react-redux';
 
@@ -37,6 +38,7 @@ ReactDOM.render (
           <Route path="/createlisting" component={CreateListing} />
           <Route path="auction/:auctionId" component={AuctionItem} />
           <Route path="/account" component={userPage} />
+          <Route path="/bids" component={Bids} />
   			</Route>
   		</Router>
 	</Provider>,
