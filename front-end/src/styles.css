@@ -114,7 +114,12 @@ p {
   text-align: center;
 }
 
-/* line 104, ../compass/sass/styles.scss */
+/* line 103, ../compass/sass/styles.scss */
+h1, h2 {
+  text-align: center;
+}
+
+/* line 108, ../compass/sass/styles.scss */
 .fa-fw {
   width: 2em;
 }

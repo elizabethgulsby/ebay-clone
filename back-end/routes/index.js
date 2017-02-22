@@ -153,6 +153,14 @@ router.post('/submitBid', function(req, res, next) {
 							newBid: req.body.bidAmount
 						});
 					})
+
+					var insertAuctiontoBidHistory = "INSERT INTO bid_history (auction_id, bidder_id, amount) VALUES (?, ?, ?)";
+					connection.query(insertAuctiontoBidHistory, [req.body.auctionItemId, results2[0].id, req.body.bidAmount], (error4, results4, fields4) => {
+						if (error) throw error;
+						res.json({
+							msg: "Inserted into bid history!"
+						})
+					})
 				}
 				else {
 					res.json({
