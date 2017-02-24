@@ -205,4 +205,17 @@ router.get('/account', function(req, res, next) {
 	
 });
 
+//make a route for the bids section of the account page (bid details not showing)
+router.get('/bids', function(req, res, next) {
+	var theBids = req.params.bids;
+	var selectBids = "SELECT auction_id, bidder_id, bid_history.timestamp, amount, title, auctions.desc, starting_bid, current_bid, buy_now_price FROM bid_history LEFT OUTER JOIN auctions ON auctions.id = bid_history.id";
+	connection.query(selectBids, [theBids], (error, results, fields) => {
+		if (error) throw error;
+		res.json({
+			msg: "Here are the bids!"
+		})
+	})
+
+})
+
 module.exports = router;
